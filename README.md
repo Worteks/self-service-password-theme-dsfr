@@ -52,4 +52,4 @@ docker run -p 8080:80 \
   -it docker.io/ltbproject/self-service-password:latest
 ```
 
-Then connect on [http://localhost:8080]
+Then connect on [http://localhost:8080](http://localhost:8080)
