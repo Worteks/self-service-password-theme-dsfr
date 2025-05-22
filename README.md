@@ -30,6 +30,7 @@ Copy these files into the Self Service Password installation directory:
 
 In your `config.inc.local.php` adjust these settings:
 ```php
+$custom_tpl_dir = "templates/dsfr";
 $background_image = "";
 $custom_css = "css/dsfr/dsfr.css";
 ```
