@@ -23,7 +23,7 @@ Copy them to `htdocs/vendor/dsfr` in the Self Service Password installation dire
 ### DSFR theme
 
 Copy these files into the Self Service Password installation directory:
-* `template/dsfr/*` : all overriden template files
+* `templates/dsfr/*`: all overriden template files
 * `htdocs/css/dsfr/dsfr.css`: custom CSS file
 
 ## Theme configuration
