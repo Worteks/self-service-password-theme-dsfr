@@ -5,7 +5,7 @@
     <div class="fr-container">
         <div class="fr-footer__body">
             <div class="fr-footer__brand fr-enlarge-link">
-                <p class="fr-logo">Ministère<br>de l'agriculture<br>et de la souveraineté<br>alimentaire</p>
+                <p class="fr-logo">{$msg_dsfr_entity_name nofilter}</p>
             </div>
             <div class="fr-footer__content">
                 <div>LDAP Tool Box Self Service Password - version {$version}</div>

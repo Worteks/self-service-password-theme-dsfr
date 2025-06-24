@@ -35,6 +35,11 @@ $background_image = "";
 $custom_css = "css/dsfr/dsfr.css";
 ```
 
+Configure some messages:
+```php
+$messages['dsfr_entity_name'] = "Ministère<br>...<br>...";
+```
+
 ## Development
 
 To test the theme from current git repository, you will need:

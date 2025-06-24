@@ -7,7 +7,7 @@
                 <div class="fr-header__brand fr-enlarge-link">
                     <div class="fr-header__brand-top">
                         <div class="fr-header__logo">
-                            <p class="fr-logo">Ministère<br>de l'agriculture<br>et de la souveraineté<br>alimentaire</p>
+                            <p class="fr-logo">{$msg_dsfr_entity_name nofilter}</p>
                         </div>
                     </div>
                     <div class="fr-header__service">
