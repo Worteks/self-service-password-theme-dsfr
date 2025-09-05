@@ -1,4 +1,5 @@
 
+</div>
 {if $display_footer}
 
 <footer class="fr-footer" role="contentinfo" id="footer">
@@ -35,6 +36,8 @@
 <script type="module" src="vendor/dsfr/dsfr.module.min.js"></script>
 <script src="js/self-service-password.js"></script>
 <script src="js/ppolicy.js"></script>
+<script type="module" src="vendor/dsfr/dsfr.module.min.js"></script>
+<script type="text/javascript" nomodule src="vendor/dsfr/dsfr.nomodule.min.js"></script>
 {if $captcha_js}
 {$captcha_js nofilter}
 {/if}
