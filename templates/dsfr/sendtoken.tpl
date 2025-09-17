@@ -30,7 +30,7 @@
     <div class="fr-fieldset__element"> <!--dsfr email-->
         <div class="fr-input-group">
             <label for="mail" class="fr-label">{$msg_mail}</label>
-            <input type="email" name="email" id="email" value="{$usermail}" class="fr-input" />
+            <input type="email" name="mail" id="mail" value="{$usermail}" class="fr-input" />
         </div>
     </div>
 
