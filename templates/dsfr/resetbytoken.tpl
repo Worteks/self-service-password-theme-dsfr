@@ -1,11 +1,11 @@
 {if $prehook_return and $display_prehook_error and $prehook_return > 0}
-    <div class="result alert shadow alert-warning">
-    <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> {$prehook_output[0]}
+    <div class="fr-alert fr-alert--warning fr-mb-md-6v"> <!--dsfr style for warning message-->
+    {$prehook_output[0]}
     </div>
 {/if}
 {if $posthook_return and $display_posthook_error and $posthook_return > 0}
-    <div class="result alert shadow alert-warning">
-    <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> {$posthook_output[0]}
+    <div class="fr-alert fr-alert--warning fr-mb-md-6v"> <!--dsfr style for warning message-->
+    {$posthook_output[0]}
     </div>
 {/if}
 {if $result !== "passwordchanged"}
@@ -17,50 +17,56 @@
             {$msg_resetbysmshelp|unescape: "html" nofilter}</div>
     {/if}
     {if $result !== "tokenrequired" and $result !== "tokennotvalid"}
-        {if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'above'}
+        <!--{if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'above'} ppolicy must be below
             {include file="policy.tpl"}
-        {/if}
-        <div class="alert shadow alert-info">
-        <form action="#" method="post" class="form-horizontal">
+        {/if}-->
+
+
+        <div class="fr-container fr-background-alt--grey fr-px-md-0 fr-pt-10v fr-pt-md-14v fr-pb-6v fr-pb-md-10v">
+        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+        <div class="fr-col-12 fr-col-md-10 fr-col-lg-9"> <!--dsfr container for large padding-->
+            <form action="#" method="post">
+
             <input type="hidden" name="token" value="{$token}" />
-            <div class="row mb-3">
-                <label for="login" class="col-sm-4 col-form-label text-end">{$msg_login}</label>
-                <div class="col-sm-8">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
-                        <input type="text" name="login" id="login" value="{$login}" class="form-control" placeholder="{$msg_login}" disabled />
-                    </div>
+
+            <div class="fr-fieldset__element"> <!--dsfr login-->
+            <div class="fr-input-group">
+                <label for="login" class="fr-label">{$msg_login}</label>
+                <input type="text" name="login" id="login" value="{$login}" class="fr-input" />
+            </div>
+            </div>
+
+            <div class="fr-fieldset__element"> <!--dsfr password-->
+                <div class="fr-input-group">
+                    <label for="newpassword" class="fr-label">{$msg_newpassword}</label>
+                    <input type="password" autocomplete="new-password" name="newpassword" id="newpassword" class="fr-input"/>
                 </div>
             </div>
-            <div class="row mb-3">
-                <label for="newpassword" class="col-sm-4 col-form-label text-end">{$msg_newpassword}</label>
-                <div class="col-sm-8">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
-                        <input type="password" autocomplete="new-password" name="newpassword" id="newpassword" class="form-control" placeholder="{$msg_newpassword}" />
-                    </div>
+
+            <div class="fr-fieldset__element"> <!--dsfr password-->
+                <div class="fr-input-group">
+                    <label for="newpassword" class="fr-label">{$msg_confirmpassword}</label>
+                    <input type="password" autocomplete="new-password" name="confirmpassword" id="confirmpassword" class="fr-input"/>
                 </div>
             </div>
-            <div class="row mb-3">
-                <label for="confirmpassword" class="col-sm-4 col-form-label text-end">{$msg_confirmpassword}</label>
-                <div class="col-sm-8">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
-                        <input type="password" autocomplete="new-password" name="confirmpassword" id="confirmpassword" class="form-control" placeholder="{$msg_confirmpassword}" />
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="offset-sm-4 col-sm-8">
-                    <button type="submit" class="btn btn-success">
+
+            <div class="fr-fieldset__element"> <!--dsfr submit button-->
+                <div class="fr-btns-group--right">
+                    <button type="submit" class="fr-mt-2v fr-btn fr-btn">
                         <i class="fa fa-fw fa-check-square-o"></i> {$msg_submit}
                     </button>
                 </div>
             </div>
-        </form>
-        </div>
+
+        <div class="fr-fieldset__element"> <!--password policy-->
         {if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'below'}
-            {include file="policy.tpl"}
+        {include file="policy.tpl"}
         {/if}
+        </div>
+
     {/if}
 {/if}
+</form>
+</div>
+</div>
+</div>
