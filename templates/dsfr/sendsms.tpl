@@ -32,26 +32,30 @@
     </form>
     </div>
 {elseif $error_sms and ($error_sms == 'smssent' or $error_sms == 'smssent_ifexists' or $error_sms == 'tokenattempts')}
-    <div class="alert shadow alert-info">
-    <form action="#" method="post" class="form-horizontal">
-        <div class="row mb-3">
-            <label for="smstoken" class="col-sm-4 col-form-label text-end">{$msg_smstoken}</label>
-            <div class="col-sm-8">
-                <div class="input-group">
-                    <span class="input-group-text"><i class="fa fa-fw fa-key"></i></span>
-                    <input type="text" name="smstoken" id="smstoken" class="form-control" placeholder="{$msg_smstoken}" />
-                </div>
+    <div class="fr-container fr-background-alt--grey fr-px-md-0 fr-pt-10v fr-pt-md-14v fr-pb-6v fr-pb-md-10v">
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-12 fr-col-md-10 fr-col-lg-9"> <!--dsfr container for large padding-->
+    <form action="#" method="post">
+
+        <div class="fr-fieldset__element"> <!--dsfr code-->
+            <div class="fr-input-group">
+                <label for="smstoken" class="fr-label">{$msg_smstoken}</label>
+                <input type="text" name="smstoken" id="smstoken" class="fr-input"/>
             </div>
         </div>
+
         <input type="hidden" name="token" value="{$token}" />
-        <div class="row mb-3">
-            <div class="offset-sm-4 col-sm-8">
-                <button type="submit" class="btn btn-success">
-                    <i class="fa fa-fw fa-check-square-o"></i> {$msg_submit}
+        <div class="fr-fieldset__element"> <!--dsfr submit button-->
+            <div class="fr-btns-group--right">
+                <button type="submit" class="fr-mt-2v fr-btn fr-btn">
+                <i class="fa fa-fw fa-check-square-o"></i> {$msg_submit}
                 </button>
             </div>
         </div>
+
     </form>
+    </div>
+    </div>
     </div>
 {else}
     {if $show_help}

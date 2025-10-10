@@ -24,6 +24,9 @@
 {/if}
 </head>
 <body>
+
+<div class="wrap">
+
 {if $background_image}
 <div id="background_url" data-backgroundurl='{$background_image}'></div>
 {/if}
