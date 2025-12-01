@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{$lang}">
+<html lang="{$lang}" data-fr-scheme="">
 <head>
     <title>{$msg_title}</title>
     <meta charset="utf-8" />
