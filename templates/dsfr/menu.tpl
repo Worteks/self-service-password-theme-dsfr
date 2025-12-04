@@ -1,17 +1,29 @@
 <div class="fr-header__menu"> <!-- includes the grey line between logo and nav  -->
 <div class="fr-container">
- <button id="header-navigation" aria-expanded="false" aria-controls="header-navigation" aria-current="true" type="button" class="fr-nav__btn">Menu principal</button>
- <nav class="fr-collapse fr-menu" id="header-navigation" role="navigation" aria-label="Menu principal">
-    <ul class="fr-menu__list">
-      <li class="fr-menu__item">
-        <a href="index.php"
+
+ <nav class="fr-nav" id="navigation-title" role="navigation" aria-label="{$msg_title}">
+  <ul class="fr-nav__list">
+    <li class="fr-nav__item">
+      <a href="index.php"
         {if $action == 'change'}
         aria-current="page"
         {/if}
         class="fr-nav__link"
         >{$msg_title}
-        </a>
-      </li>
+      </a>
+    </li>
+
+    <li class="fr-nav__item">
+    {if $dsfr_drop_down_menu == true}
+    <button id="navigation-dropdown" aria-expanded="false" aria-controls="navigation-dropdown"
+    {if $action != 'change'}
+    aria-current="page"
+    {/if}
+
+    type="button" class="fr-nav__btn"> {$msg_dsfr_drop_down_menu_title} </button>
+    {/if}
+      <div class="fr-collapse fr-menu" id="navigation-dropdown" aria-label="{$msg_dsfr_drop_down_menu_title}">
+    <ul class="fr-menu__list">
 
       {if $use_questions}
       <li class="fr-menu__item">
@@ -54,7 +66,7 @@
         <a href="?action=changesshkey"
         data-content="{$msg_changehelpsshkey|strip_tags:false}"
         class="fr-nav__link"
-        {if ($action == 'changesshkey')}
+        {if $action == 'changesshkey'}
         aria-current="page"{/if}
         style="justify-content:left"
         ><i class="fa fa-fw fa-terminal"></i> {$msg_menusshkey}</a>
@@ -74,6 +86,9 @@
 
       {/foreach}
       {/if}
+        </ul>
+      </div>
+    </li>
     </ul>
   </nav>
 </div>
