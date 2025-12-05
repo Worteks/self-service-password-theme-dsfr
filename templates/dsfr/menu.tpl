@@ -32,7 +32,7 @@
         {if $action == 'resetbyquestions' or $action == 'setquestions'}
         aria-current="page"{/if}
         style="justify-content:left"
-        ><i class="fa fa-fw fa-question-circle"></i> {$msg_menuquestions}</a> <!-- style="justify-content:left" surcharge du style pour que l'icône le texte restent collés quand le menu s'empile | le if aria-current sert mettre un syle particulier pour signaler que c'est la page en cours -->
+        ><i class="fa fa-fw fa-question-circle me-2"></i> {$msg_menuquestions}</a> <!-- style="justify-content:left" surcharge du style pour que l'icône le texte restent collés quand le menu s'empile | le if aria-current sert mettre un syle particulier pour signaler que c'est la page en cours -->
       </li>
 
       {/if}
@@ -44,7 +44,7 @@
         {if ($action == 'resetbytoken' and $source != 'sms') or $action == 'sendtoken'}
         aria-current="page"{/if}
         style="justify-content:left"
-        ><i class="fa fa-fw fa-envelope"></i> {$msg_menutoken}</a>
+        ><i class="fa fa-fw fa-envelope me-2"></i> {$msg_menutoken}</a>
       </li>
 
       {/if}
@@ -56,7 +56,7 @@
         {if ($action == 'resetbytoken' and $source == 'sms') or $action == 'sendsms'}
         aria-current="page"{/if}
         style="justify-content:left"
-        ><i class="fa fa-fw fa-mobile"></i> {$msg_menusms}</a>
+        ><i class="fa fa-fw fa-mobile me-2"></i> {$msg_menusms}</a>
       </li>
 
       {/if}
