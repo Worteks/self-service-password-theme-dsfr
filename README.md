@@ -33,11 +33,49 @@ In your `config.inc.local.php` adjust these settings:
 $custom_tpl_dir = "templates/dsfr";
 $background_image = "";
 $custom_css = "css/dsfr/dsfr.css";
+
+# To have a dropdown menu for all reset methods
+$tpl_dsfr_drop_down_menu = true;
+
+# Links
+$tpl_dsfr_footer_content_links = array(
+    array( "id" => "infogouv", "url" => "https://info.gouv.fr"),
+    array( "id" => "servicepublic", "url" => "https://service-public.fr"),
+    array( "id" => "legifrance", "url" => "https://legifrance.gouv.fr"),
+    array( "id" => "datagouv", "url" => "https://data.gouv.fr"),
+);
+
+$tpl_dsfr_footer_bottom_links = array(
+    array( "id" => "accessibilite", "url" => "#"),
+    array( "id" => "aide", "url" => "# "),
+    array( "id" => "codesrh", "url" => "# "),
+    array( "id" => "mentionslegales", "url" => "# "),
+    array( "id" => "politiquecookies", "url" => "# "),
+);
 ```
 
 Configure some messages:
 ```php
 $messages['dsfr_entity_name'] = "Ministère<br>...<br>...";
+$messages['dsfr_site_name'] = "Annuaire interne du Ministère";
+
+# Menu dropdown
+$messages['dsfr_drop_down_menu_title'] = "Réinitialisation du mot de passe";
+
+# Question select
+$messages['dsfr_placeholder_question'] = "Sélectionner une option";
+
+# Links
+$messages["dsfr_footer_link_infogouv"] = "info.gouv.fr";
+$messages["dsfr_footer_link_servicepublic"] = "service-public.fr";
+$messages["dsfr_footer_link_legifrance"] = "legifrance.gouv.fr";
+$messages["dsfr_footer_link_datagouv"] = "data.gouv.fr";
+
+$messages["dsfr_footer_link_accessibilite"] = "Accessibilité : non/partiellement/totalement conforme";
+$messages["dsfr_footer_link_aide"] = "Aide en ligne";
+$messages["dsfr_footer_link_codesrh"] = "Note sur les codes RH secondaires";
+$messages["dsfr_footer_link_mentionslegales"] = "Mentions légales";
+$messages["dsfr_footer_link_politiquecookies"] = "Politique des cookies";
 ```
 
 ## Development
