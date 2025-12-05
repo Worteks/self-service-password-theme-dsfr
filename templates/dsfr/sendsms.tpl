@@ -1,36 +1,47 @@
 {if $error_sms and $error_sms == 'smscrypttokensrequired'}
 {elseif $error_sms and $error_sms == 'smsuserfound'}
-    <div class="alert shadow alert-info">
-    <form action="#" method="post" class="form-horizontal">
-        <div class="row mb-3">
+    <div class="fr-container fr-background-alt--grey fr-px-md-0 fr-pt-10v fr-pt-md-14v fr-pb-6v fr-pb-md-10v">
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-12 fr-col-md-10 fr-col-lg-9"> <!--dsfr container for large padding-->
+    <form action="#" method="post">
+
+        <div class="fr-fieldset__element">
             <label class="col-sm-4 col-form-label text-end">{$msg_userfullname}</label>
             <div class="col-sm-8">
                 <p class="form-control-static">{$displayname}</p>
             </div>
         </div>
-        <div class="row mb-3">
+
+        <div class="fr-fieldset__element">
             <label class="col-sm-4 col-form-label text-end">{$msg_login}</label>
             <div class="col-sm-8">
                 <p class="form-control-static">{$login}</p>
             </div>
         </div>
-        <div class="row mb-3">
+
+       <div class="fr-fieldset__element">
             <label class="col-sm-4 col-form-label text-end">{$msg_sms}</label>
             <div class="col-sm-8">
                 <p class="form-control-static">{$smsdisplay}</p>
             </div>
         </div>
-        <input type="hidden" name="formtoken" value="{$formtoken}" />
-        <input type="hidden" name="encrypted_sms_login" value="{$encrypted_sms_login}" />
-        <div class="row mb-3">
-            <div class="offset-sm-4 col-sm-8">
-                <button type="submit" class="btn btn-success">
-                    <i class="fa fa-fw fa-check-square-o"></i> {$msg_submit}
+
+       <input type="hidden" name="formtoken" value="{$formtoken}" />
+       <input type="hidden" name="encrypted_sms_login" value="{$encrypted_sms_login}" />
+
+       <div class="fr-fieldset__element"> <!--dsfr submit button-->
+            <div class="fr-btns-group--right">
+                <button type="submit" class="fr-mt-2v fr-btn fr-btn">
+                <i class="fa fa-fw fa-check-square-o"></i> {$msg_submit}
                 </button>
             </div>
         </div>
+
     </form>
     </div>
+    </div>
+    </div>
+
 {elseif $error_sms and ($error_sms == 'smssent' or $error_sms == 'smssent_ifexists' or $error_sms == 'tokenattempts')}
     <div class="fr-container fr-background-alt--grey fr-px-md-0 fr-pt-10v fr-pt-md-14v fr-pb-6v fr-pb-md-10v">
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
@@ -45,7 +56,8 @@
         </div>
 
         <input type="hidden" name="token" value="{$token}" />
-        <div class="fr-fieldset__element"> <!--dsfr submit button-->
+
+       <div class="fr-fieldset__element"> <!--dsfr submit button-->
             <div class="fr-btns-group--right">
                 <button type="submit" class="fr-mt-2v fr-btn fr-btn">
                 <i class="fa fa-fw fa-check-square-o"></i> {$msg_submit}

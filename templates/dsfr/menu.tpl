@@ -13,7 +13,7 @@
       </a>
     </li>
 
-    {if $dsfr_drop_down_menu == true}
+    {if $dsfr_drop_down_menu}
     <li class="fr-nav__item">
       <button id="navigation-dropdown" aria-expanded="false" aria-controls="navigation-dropdown"
       {if $action != 'change'}
@@ -25,7 +25,7 @@
     {/if}
 
       {if $use_questions}
-      <li class={if $dsfr_drop_down_menu == true} "fr-menu__item" {else} "fr-nav__item"'{/if}>
+      <li class={if $dsfr_drop_down_menu} "fr-menu__item" {else} "fr-nav__item"'{/if}>
         <a href="?action=resetbyquestions"
         data-content="{$msg_changehelpquestions|strip_tags:false}"
         class="fr-nav__link"
@@ -37,7 +37,7 @@
 
       {/if}
       {if $use_tokens}
-      <li class={if $dsfr_drop_down_menu == true} "fr-menu__item" {else} "fr-nav__item"'{/if}>
+      <li class={if $dsfr_drop_down_menu} "fr-menu__item" {else} "fr-nav__item"'{/if}>
         <a href="?action=sendtoken"
         data-content="{$msg_changehelptoken|strip_tags:false}"
         class="fr-nav__link"
@@ -49,7 +49,7 @@
 
       {/if}
       {if $use_sms}
-      <li class={if $dsfr_drop_down_menu == true} "fr-menu__item" {else} "fr-nav__item"'{/if}>
+      <li class={if $dsfr_drop_down_menu} "fr-menu__item" {else} "fr-nav__item"'{/if}>
         <a href="?action=sendsms"
         data-content="{$msg_changehelpsms|strip_tags:false}"
         class="fr-nav__link"
@@ -61,7 +61,7 @@
 
       {/if}
       {if $change_sshkey}
-      <li class={if $dsfr_drop_down_menu == true} "fr-menu__item" {else} "fr-nav__item"'{/if}>
+      <li class={if $dsfr_drop_down_menu} "fr-menu__item" {else} "fr-nav__item"'{/if}>
         <a href="?action=changesshkey"
         data-content="{$msg_changehelpsshkey|strip_tags:false}"
         class="fr-nav__link"
@@ -74,7 +74,7 @@
       {/if}
       {if $change_custompwdfield}
       {foreach from=$change_custompwdfield item=custompwdfield key=key}
-      <li class={if $dsfr_drop_down_menu == true} "fr-menu__item" {else} "fr-nav__item"'{/if}>
+      <li class={if $dsfr_drop_down_menu} "fr-menu__item" {else} "fr-nav__item"'{/if}>
         <a href="?action=changecustompwdfield&custompwdindex={$key}"
         data-content="{$msg_changehelpcustompwdfield|strip_tags:false|cat:$custompwdfield.label}"
         class="fr-nav__link"
@@ -85,7 +85,7 @@
 
       {/foreach}
       {/if}
-    {if $dsfr_drop_down_menu == true}
+    {if $dsfr_drop_down_menu}
         </ul>
       </div>
     </li>

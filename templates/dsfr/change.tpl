@@ -94,7 +94,13 @@
     </div>
 
 {elseif $msg_passwordchangedextramessage}
-    <div class="result alert shadow alert-{$result_criticity}">
-    <i class="fa fa-fw {$result_fa_class}" aria-hidden="true"></i> {$msg_passwordchangedextramessage|unescape: "html" nofilter}
+    {if $result_criticity == "danger"} <!-- dsfr contournement problème mapping : l'indication "danger" doit être remplacée par "error", pour "warning" et "success" ce sont les mêmes -->
+    <div class="fr-alert fr-alert--error fr-mb-md-6v">
+        {$msg_passwordchangedextramessage|unescape: "html" nofilter}
     </div>
+    {else}
+    <div class="fr-alert fr-alert--{$result_criticity} fr-mb-md-6v">
+    {$msg_passwordchangedextramessage|unescape: "html" nofilter}
+    </div>
+    {/if}
 {/if}
