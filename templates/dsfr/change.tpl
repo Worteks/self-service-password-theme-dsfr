@@ -33,15 +33,19 @@
         {/if}
         </div>
     {/if}
-    <!--dsfr il faut enlever la possibilité de mettre le ppolicy au-dessus, il doit être intégré dans le cadre, en bas
-    {if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'above'}
-        {include file="policy.tpl"}
-    {/if}
-    -->
+
+
+
     <div class="fr-container fr-background-alt--grey fr-px-md-0 fr-pt-10v fr-pt-md-14v fr-pb-6v fr-pb-md-10v">
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
     <div class="fr-col-12 fr-col-md-10 fr-col-lg-9"> <!--dsfr container for large padding-->
     <form action="#" method="post">
+
+    {if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'above'}
+        <div class="fr-fieldset__element"> <!--password policy-->
+        {include file="policy.tpl"}
+        </div>
+    {/if}
 
         <div class="fr-fieldset__element"> <!--dsfr login-->
             <div class="fr-input-group">
@@ -71,11 +75,13 @@
             </div>
         </div>
 
-        <div class="fr-fieldset__element"> <!--password policy-->
+
         {if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'below'}
-        {include file="policy.tpl"}
+            <div class="fr-fieldset__element"> <!--password policy-->
+            {include file="policy.tpl"}
+            </div>
         {/if}
-        </div>
+
 
         {if ($use_captcha)}
             {$captcha_html nofilter}
@@ -94,7 +100,13 @@
     </div>
 
 {elseif $msg_passwordchangedextramessage}
-    <div class="result alert shadow alert-{$result_criticity}">
-    <i class="fa fa-fw {$result_fa_class}" aria-hidden="true"></i> {$msg_passwordchangedextramessage|unescape: "html" nofilter}
+    {if $result_criticity == "danger"} <!-- dsfr contournement problème mapping : l'indication "danger" doit être remplacée par "error", pour "warning" et "success" ce sont les mêmes -->
+    <div class="fr-alert fr-alert--error fr-mb-md-6v">
+        {$msg_passwordchangedextramessage|unescape: "html" nofilter}
     </div>
+    {else}
+    <div class="fr-alert fr-alert--{$result_criticity} fr-mb-md-6v">
+    {$msg_passwordchangedextramessage|unescape: "html" nofilter}
+    </div>
+    {/if}
 {/if}

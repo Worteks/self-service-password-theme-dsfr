@@ -30,9 +30,6 @@
 <main role="main" id="content">
     <div class="fr-container fr-mt-8v fr-mt-md-14v fr-mb-2v fr-mb-md-8v">
 
-       <!-- <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">             <div class="fr-col-12 fr-col-md-10 fr-col-lg-8">                <h1 class="fr-h2">{$msg_title}</h1>            </div>        </div>        -->
-       <!--dsfr title-->
-
         <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div class="fr-col-12 fr-col-md-10 fr-col-lg-8">
                 {if count($dependency_errors)}

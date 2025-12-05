@@ -8,24 +8,29 @@
     {$posthook_output[0]}
     </div>
 {/if}
+
 {if $result !== 'passwordchanged'}
     {if $show_help}
-    <div class="fr-alert fr-alert--info fr-mb-md-6v"> <!--dsfr style for info message-->
-    {$msg_resetbyquestionshelp|unescape: "html" nofilter}
-    {if $question_populate_enable }
-        <br /> {$msg_questionspopulatehint}
+        <div class="fr-alert fr-alert--info fr-mb-md-6v"> <!--dsfr style for info message-->
+        {$msg_resetbyquestionshelp|unescape: "html" nofilter}
+        {if $question_populate_enable }
+            <br /> {$msg_questionspopulatehint}
+        {/if}
+        </div>
     {/if}
-    </div>
-    {/if}
-    <!--dsfr il faut enlever la possibilité de mettre le ppolicy au-dessus, il doit être intégré dans le cadre, en bas
-    {if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'above'}
-        {include file="policy.tpl"}
-    {/if}
-    -->
+
     <div class="fr-container fr-background-alt--grey fr-px-md-0 fr-pt-10v fr-pt-md-14v fr-pb-6v fr-pb-md-10v">
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
     <div class="fr-col-12 fr-col-md-10 fr-col-lg-9"> <!--dsfr container for large padding-->
             <form action="#" method="post" class="form-horizontal">
+
+                {if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'above'}
+                    <div class="fr-fieldset__element"> <!--password policy-->
+                    {include file="policy.tpl"}
+                    </div>
+                {/if}
+
+
                 <div class="fr-fieldset__element">
                     <div class="fr-input-group">
                         <label for="login" class="fr-label">{$msg_login}</label>
@@ -35,22 +40,20 @@
 
                 {if $questions_count > 1}
                     {for $q_num = 1 to $questions_count}
-                        <div class="row mb-3">
-                            <label for="question{$q_num}" class="col-sm-4 col-form-label text-end">{$msg_question} {$q_num}</label>
-                            <div class="col-sm-8">
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fa fa-fw fa-question"></i></span>
-                                    <select name="question[]" id="question{$q_num}" class="form-control question">
-                                        <option value="">{$msg_question}</option>
-                                        {foreach from=$msg_questions key=value item=text}
-                                            <option value="{$value}" {if $question[$q_num-1] == $value}selected="selected"{/if}>{$text}</option>
-                                        {/foreach}
-                                    </select>
-                                </div>
+
+                        <div class="fr-fieldset__element"> <!--dsfr question-->
+                            <div class="fr-select-group">
+                                <label class="fr-label" for="question{$q_num}">{$msg_question} {$q_num}</label>
+                                <select class="fr-select question" id="question{$q_num}" name="question[]">
+                                    <option value="" selected disabled hidden> {$msg_dsfr_placeholder_question}</option>
+                                    {foreach from=$msg_questions key=value item=text}
+                                    <option value="{$value}" {if $question[$q_num-1] == $value}selected="selected"{/if}>{$text}</option>
+                                    {/foreach}
+                                </select>
                             </div>
                         </div>
 
-                    <div class="fr-fieldset__element">
+                    <div class="fr-fieldset__element"> <!--dsfr answer-->
                         <div class="fr-input-group">
                             <label for="answer{$q_num}" class="fr-label">{$msg_answer} {$q_num}</label>
                             <input type="text" name="answer[]" id="answer{$q_num}" class="fr-input" />
@@ -64,7 +67,7 @@
                     <div class="fr-select-group">
                         <label class="fr-label" for="question">{$msg_question}</label>
                         <select class="fr-select" id="question" name="question">
-                            <option value="" selected disabled hidden> Sélectionner une option</option>
+                            <option value="" selected disabled hidden> {$msg_dsfr_placeholder_question}</option>
                             {foreach from=$msg_questions key=value item=text}
                             <option value="{$value}">{$text}</option>
                             {/foreach}
@@ -94,11 +97,13 @@
                     </div>
                 </div>
 
-                <div class="fr-fieldset__element"> <!--password policy-->
+
                 {if $pwd_show_policy !== "never" and $pwd_show_policy_pos === 'below'}
-                {include file="policy.tpl"}
+                    <div class="fr-fieldset__element"> <!--password policy-->
+                    {include file="policy.tpl"}
+                    </div>
                 {/if}
-                </div>
+
 
                 {if ($use_captcha)}
                     {$captcha_html nofilter}
