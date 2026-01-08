@@ -171,6 +171,8 @@
 <script src="js/jquery.selectunique.js"></script>
 <script>$(document).ready(function() { $('.question').selectunique(); })</script>
 {/if}
+<!-- Custom JS for DSFR theme -->
+<script src="js/dsfr/dsfr-ppolicy.js"></script>
 </body>
 </html>
 

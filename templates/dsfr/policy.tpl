@@ -1,7 +1,7 @@
 {if $pwd_show_policy === "onerror" and !$pwd_show_policy_onerror }
 {else}
 
-<div class="fr-messages-group">
+<div class="ppolicy fr-messages-group">
 <div class="fr-message">
     {$msg_policy|unescape: "html" nofilter}
 </div>
@@ -115,7 +115,7 @@
         <!-- entropy criteria -->
         {if $pwd_display_entropy }
             <li>
-                <i id="ppolicy-checkentropy-feedback" class="fa fa-li"> </i>
+                <i id="ppolicy-checkentropy-feedback" class="fa-li fr-icon-info-fill fr-icon--sm"> </i>
                 {if $pwd_check_entropy }
                     <span trspan="checkentropyLabel" data-CHECKENTROPY_REQUIRED="1" data-CHECKENTROPY_REQUIRED_LEVEL="{$pwd_min_entropy}">{$msg_policyentropy|unescape: "html" nofilter}</span>
                 {else}
