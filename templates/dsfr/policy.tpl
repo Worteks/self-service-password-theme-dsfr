@@ -115,7 +115,7 @@
         <!-- entropy criteria -->
         {if $pwd_display_entropy }
             <li>
-                <i id="ppolicy-checkentropy-feedback" class="fa-li fr-icon-info-fill fr-icon--sm"> </i>
+                <i id="ppolicy-checkentropy-feedback" class="fa fa-li"> </i>
                 {if $pwd_check_entropy }
                     <span trspan="checkentropyLabel" data-CHECKENTROPY_REQUIRED="1" data-CHECKENTROPY_REQUIRED_LEVEL="{$pwd_min_entropy}">{$msg_policyentropy|unescape: "html" nofilter}</span>
                 {else}
