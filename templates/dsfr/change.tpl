@@ -81,7 +81,7 @@
         </div>
 
         <div class="fr-password" style="padding-left: .5rem; padding-right: .5rem;"> <!--dsfr password with display toggle-->
-            <label class="fr-password__label fr-label" for="confirmpassword" class="fr-label">{$msg_newpassword}</label>
+            <label class="fr-password__label fr-label" for="confirmpassword" class="fr-label">{$msg_confirmpassword}</label>
             <div class="fr-input-wrap">
                 <input class="fr-password__input fr-input" autocapitalize="off" autocorrect="off" aria-describedby="storybook-password-input-messages" aria-required="true" name="confirmpassword" autocomplete="new-password" id="confirmpassword" type="password">
             </div>

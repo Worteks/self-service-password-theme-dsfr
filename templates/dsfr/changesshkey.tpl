@@ -16,10 +16,16 @@
             </div>
         </div>
 
-        <div class="fr-fieldset__element"> <!--dsfr password-->
-            <div class="fr-input-group">
-                <label for="password" class="fr-label">{$msg_password}</label>
-                <input type="password" autocomplete="current-password" name="password" id="password" class="fr-input" />
+        <div class="fr-password" style="padding-left: .5rem; padding-right: .5rem;"> <!--dsfr password with display toggle-->
+            <label class="fr-password__label fr-label" for="password" class="fr-label">{$msg_password}</label>
+            <div class="fr-input-wrap">
+                <input class="fr-password__input fr-input" autocapitalize="off" autocorrect="off" aria-describedby="storybook-password-input-messages" aria-required="true" name="password" autocomplete="current-password" id="password" type="password">
+            </div>
+            <div class="fr-messages-group" id="storybook-password-input-messages" aria-live="polite">
+            </div>
+            <div class="fr-password__checkbox fr-checkbox-group fr-checkbox-group--sm">
+                <input aria-label="Afficher le mot de passe" id="password-show" type="checkbox">
+                <label class="fr--password__checkbox fr-label" for="password-show"> Afficher </label>
             </div>
         </div>
 
