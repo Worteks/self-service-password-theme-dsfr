@@ -84,16 +84,30 @@
                     </div>
 
                 {/if}
-                <div class="fr-fieldset__element"> <!--dsfr password-->
-                    <div class="fr-input-group">
-                        <label for="newpassword" class="fr-label">{$msg_newpassword}</label>
-                        <input type="password" autocomplete="new-password" name="newpassword" id="newpassword" class="fr-input"/>
+
+                <div class="fr-password" style="padding-left: .5rem; padding-right: .5rem;"> <!--dsfr password with display toggle-->
+                    <label class="fr-password__label fr-label" for="newpassword" class="fr-label">{$msg_newpassword}</label>
+                    <div class="fr-input-wrap">
+                        <input class="fr-password__input fr-input" autocapitalize="off" autocorrect="off" aria-describedby="storybook-password-input-messages" aria-required="true" name="newpassword" autocomplete="new-password" id="newpassword" type="password">
+                    </div>
+                    <div class="fr-messages-group" id="storybook-password-input-messages" aria-live="polite">
+                    </div>
+                    <div class="fr-password__checkbox fr-checkbox-group fr-checkbox-group--sm">
+                        <input aria-label="Afficher le mot de passe" id="newpassword-show" type="checkbox">
+                        <label class="fr--password__checkbox fr-label" for="newpassword-show"> Afficher </label>
                     </div>
                 </div>
-                <div class="fr-fieldset__element"> <!--dsfr password-->
-                    <div class="fr-input-group">
-                        <label for="confirmpassword" class="fr-label">{$msg_confirmpassword}</label>
-                        <input type="password" autocomplete="new-password" name="confirmpassword" id="confirmpassword" class="fr-input"/>
+
+                <div class="fr-password" style="padding-left: .5rem; padding-right: .5rem;"> <!--dsfr password with display toggle-->
+                    <label class="fr-password__label fr-label" for="confirmpassword" class="fr-label">{$msg_confirmpassword}</label>
+                    <div class="fr-input-wrap">
+                        <input class="fr-password__input fr-input" autocapitalize="off" autocorrect="off" aria-describedby="storybook-password-input-messages" aria-required="true" name="confirmpassword" autocomplete="new-password" id="confirmpassword" type="password">
+                    </div>
+                    <div class="fr-messages-group" id="storybook-password-input-messages" aria-live="polite">
+                    </div>
+                    <div class="fr-password__checkbox fr-checkbox-group fr-checkbox-group--sm">
+                        <input aria-label="Afficher le mot de passe" id="confirmpassword-show" type="checkbox">
+                        <label class="fr--password__checkbox fr-label" for="confirmpassword-show"> Afficher </label>
                     </div>
                 </div>
 

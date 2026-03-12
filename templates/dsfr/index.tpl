@@ -32,6 +32,9 @@
 
         <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div class="fr-col-12 fr-col-md-10 fr-col-lg-8">
+
+                <h2>{$msg_dsfr_page_title_{$action}}</h2>
+                
                 {if count($dependency_errors)}
                 {foreach from=$dependency_errors key=result item=result_array}
                     {if $result_array['criticity'] == "danger"} <!-- dsfr contournement problème mapping : l'indication "danger" doit être remplacée par "error", pour "warning" et "success" ce sont les mêmes -->

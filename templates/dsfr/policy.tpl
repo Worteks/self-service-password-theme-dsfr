@@ -1,7 +1,7 @@
 {if $pwd_show_policy === "onerror" and !$pwd_show_policy_onerror }
 {else}
 
-<div class="fr-messages-group">
+<div class="ppolicy fr-messages-group">
 <div class="fr-message">
     {$msg_policy|unescape: "html" nofilter}
 </div>

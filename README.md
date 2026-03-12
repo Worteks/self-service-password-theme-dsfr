@@ -25,6 +25,7 @@ Copy them to `htdocs/vendor/dsfr` in the Self Service Password installation dire
 Copy these files into the Self Service Password installation directory:
 * `templates/dsfr/*`: all overriden template files
 * `htdocs/css/dsfr/dsfr.css`: custom CSS file
+* `htdocs/js/dsfr/*`: custom JS files
 
 ## Theme configuration
 
@@ -92,6 +93,7 @@ docker run -p 8080:80 \
   -v /path/to/dsfr/dist:/var/www/htdocs/vendor/dsfr \
   -v $PWD/templates/dsfr:/var/www/templates/dsfr \
   -v $PWD/htdocs/css/dsfr:/var/www/htdocs/css/dsfr \
+  -v $PWD/htdocs/js/dsfr:/var/www/htdocs/js/dsfr \
   -it docker.io/ltbproject/self-service-password:latest
 ```
 
