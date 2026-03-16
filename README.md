@@ -77,6 +77,16 @@ $messages["dsfr_footer_link_aide"] = "Aide en ligne";
 $messages["dsfr_footer_link_codesrh"] = "Note sur les codes RH secondaires";
 $messages["dsfr_footer_link_mentionslegales"] = "Mentions légales";
 $messages["dsfr_footer_link_politiquecookies"] = "Politique des cookies";
+
+# Pages title
+$messages["dsfr_page_title_change"] = "Changement du mot de passe";
+$messages["dsfr_page_title_changesshkey"] = "Changement de la clé SSH";
+$messages["dsfr_page_title_resetbyquestions"] = "Réponse aux questions";
+$messages["dsfr_page_title_setquestions"] = "Enregistrement des réponses";
+$messages["dsfr_page_title_resetbytoken"] = "Code à usage unique";
+$messages["dsfr_page_title_sendtoken"] = "Envoi du code par mail";
+$messages["dsfr_page_title_sendsms"] = "Envoi du code par SMS";
+$messages["dsfr_page_title_setattributes"] = "Modification des coordonnées de contact";
 ```
 
 ## Development
